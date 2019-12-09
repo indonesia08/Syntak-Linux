@@ -8,7 +8,6 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
-import static config.fungsi_fungsi.loadProperties;
 import javax.swing.JOptionPane;
 import view.Home;
 
@@ -24,13 +23,11 @@ public class koneksi {
         //pengecekan koneksi database
         if (connection==null){
             try{
-                Properties p2 = new Properties();
-                p2 = loadProperties("configuration.133D01");
                 
-                String host = p2.getProperty("DBMYSQL_HOST");
-                String username = p2.getProperty("DBMYSQL_USER");
-                String password = p2.getProperty("DBMYSQL_PASSWORD");
-                String db = p2.getProperty("DBMYSQL_DB");
+                String host = "";
+                String username = "";
+                String password = "";
+                String db = "";
                 
                 String url = "jdbc:mysql://"+host+":3306/"+db;
                 
